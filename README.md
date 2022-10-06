@@ -71,7 +71,7 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 ---
 
 3. Write a Python class `CoffeeSerializer` which has a class method, `CoffeeSerializer.json_to_list`:
-```
+```python
 @classmethod
 def json_to_list(cls, coffee_json)
 ```
@@ -89,7 +89,7 @@ def json_to_list(cls, coffee_json)
 ---
 
 4. Write a class method for `CoffeeDeserializer`, `CoffeeDeserializer.read` that can read a JSON file from disk and that is functional cross-platform (i.e., on Windows, Linux, and MacOS)
-```
+```python
 @classmethod
 def read(cls, filepath)
 ```
