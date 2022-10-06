@@ -113,7 +113,8 @@ Such methods exist in the Python library [Beautiful Soup 4 (BS4)](https://www.cr
 As an example, on [Qualcomm Venture's About page](https://www.qualcommventures.com/about/), if you are interested in the information in paragraph below the heading "Supporting Entrepreneurship & Diversity", we could use the following query selector in the Chrome Developer Tools console:
 
 ```javascript
-document.querySelector("#h-supporting-entrepreneurship-diversity ~ p")
+document.querySelector("#h-supporting-entrepreneurship-diversity ~ p").innerHTML
+/* 'We are committed to driving invention and innovation. Stay tuned for details on the next Qualcomm Ventures Female Founders Summit where female-founded, early-stage technology companies will participate for a chance to win funding. Our support of these high-potential female entrepreneurs, developing transformative technologies, aligns with this commitment.' */
 ```
 
 ## User Story / Acceptance Criteria:
