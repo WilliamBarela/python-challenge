@@ -1,6 +1,6 @@
 # python-challenge
 
-Using Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee)
+Use Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee)
 and transforms the response to a CSV file.
 
 ## User Story / Acceptance Criteria
@@ -21,7 +21,7 @@ AND it should log any API traffic with status codes and errors if applicable.
   - Use [Requests library](https://requests.readthedocs.io/en/latest/) to call a given API with a given endpoint:
   - Example arguments: `api_base_uri = https://api.sampleapis.com/` and `endpoint = /coffee/hot`
 
-Include logging and excepting handling for calls to the API.
+Include logging and exception handling for calls to the API.
 This can be as simple as appending a print statement to a `run.log` file. You may also use a logging library if you desire.
 The entries to log file should include the datetime of the exception in ISO-8601 format, the HTTP status code, and the error message:
 ```
@@ -104,4 +104,4 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 
 ---
 
-IMPORTANT: expect for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
+IMPORTANT: except for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
