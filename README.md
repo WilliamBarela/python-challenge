@@ -1,4 +1,4 @@
-# python-challenge
+# Python Challenge
 
 Use Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee)
 and transforms the response to a CSV file.
@@ -105,3 +105,40 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 ---
 
 IMPORTANT: except for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
+
+# Web Scraping Challenge:
+
+In Javascript, one can use the `document.querySelector` and `document.querySelectorAll` methods to collect elements from the DOM which match on [CSS selectors](https://en.wikipedia.org/wiki/CSS#Selector).
+Such methods exist in the Python library [Beautiful Soup 4 (BS4)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+As an example, on [Qualcomm Venture's About page](https://www.qualcommventures.com/about/), if you are interested in the information in paragraph below the heading "Supporting Entrepreneurship & Diversity", we could use the following query selector in the Chrome Developer Tools console:
+
+```javascript
+document.querySelector("#h-supporting-entrepreneurship-diversity ~ p")
+```
+
+# User Story / Acceptance Criteria:
+
+```
+GIVEN that I need to scrape the title and URL for a given book on books.toscrape.com
+WHEN I use the query selector to be developed
+THEN I should be able to retrieve the title and URL for the book using Chrome Developer Tools.
+```
+
+## Implementation Details:
+Use the Chrome developer tools to find a query selector which which collects the URL and the title for the third of of the "recentely viewed" books
+on [this page](https://books.toscrape.com/catalogue/made-to-stick-why-some-ideas-survive-and-others-die_715/index.html). The query and output should be as follows:
+
+```javascript
+document.querySelector([YOUR CSS QUERY SELECTOR]).html
+// 'https://books.toscrape.com/catalogue/the-third-wave-an-entrepreneurs-vision-of-the-future_862/index.html'
+
+
+document.querySelector([YOUR CSS QUERY SELECTOR]).title
+// 'The Third Wave: An Entrepreneur’s Vision of the Future'
+```
+
+---
+
+Reference:
+  - [How to Open the Chrome Developer Tools](https://developer.chrome.com/docs/devtools/open/)
+  - [CSS Selectors MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
