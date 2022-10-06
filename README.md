@@ -2,11 +2,11 @@
 
 Using Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee).
 
-##Specifications:
+## Specifications:
 1. Write a Python module which includes a `class ApiService` which includes at minimum the following method signature:
 
 - `def get(api_base_uri, endpoint)`
-- specifications:
+- details:
   - Use [Requests library](https://requests.readthedocs.io/en/latest/) to call a given API with a given endpoint:
   - Example arguments: `api_base_uri = https://api.sampleapis.com/` and `endpoint = /coffee/hot`
 
@@ -32,6 +32,8 @@ coffeeApi = ApiService(COFFEE.api_base_uri)
 coffeeApi.get(COFFEE.endpoint)
 ```
 
+---
+
 2. Write a Python class, `CoffeeDeserializer` which models a given coffee JSON object:
 ```json
 {
@@ -55,18 +57,35 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
   - image
   - id
 
-3. Write a Python class `CoffeeDeserializer` which has a class method, `json_to_list`:
+---
+
+3. Write a Python class `CoffeeSerializer` which has a class method, `self.json_to_list`:
 - `def self.json_to_list(coffee_json)`
-- For a given serialized coffee object, `coffee_object`, the `json_to_list` class method should return the following values interpolated:
+- For a given deserialized coffee object, `coffee_object`, the `json_to_list` class method should return the following values interpolated:
 ```python
 [
   coffee_object.title,
   coffee_object.description,
-  coffee_object.,
-  coffee_object.,
-  coffee_object.
+  coffee_object.ingredients,
+  coffee_object.image,
+  coffee_object.id
 ]
 ```
 
-4. 
-standard library only
+4. Write a class method for `CoffeeDeserializer`, `self.read` that can read a JSON file from disk and that is functional cross-platform (i.e., on Windows, Linux, and MacOS)
+- `def self.read(filepath)`
+- returns: a list of CoffeeDeserializer objects
+
+
+5. Requirements:
+  - Read in `output/2022-10-05T23:14:06-05:00_-_iced.json` 
+  - Call the Coffee API for hot coffee: `https://api.sampleapis.com/coffee/hot`
+  - Log the call to the API as mentioned above
+  - Write the results from `/coffee/hot` to a file in `ouput` in the format: `[ISO-8601]_-_hot.json`
+  - Join the iced (from disk) and the hot (from API) items and output them to a CSV with the following headers:
+
+```csv
+  id,title,description,ingredients,image
+```
+
+Expect for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
