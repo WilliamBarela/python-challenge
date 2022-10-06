@@ -16,7 +16,7 @@ AND it should log any API traffic with status codes and errors if applicable.
 ## Suggested Implementation Details:
 1. Write a Python module which includes a `class ApiService` which includes at minimum the following method signature:
 
-- `def get(api_base_uri, endpoint)`
+- `def get(self, endpoint)`
 - details:
   - Use [Requests library](https://requests.readthedocs.io/en/latest/) to call a given API with a given endpoint:
   - Example arguments: `api_base_uri = https://api.sampleapis.com/` and `endpoint = /coffee/hot`
@@ -70,8 +70,11 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 
 ---
 
-3. Write a Python class `CoffeeSerializer` which has a class method, `self.json_to_list`:
-- `def self.json_to_list(coffee_json)`
+3. Write a Python class `CoffeeSerializer` which has a class method, `CoffeeSerializer.json_to_list`:
+```
+@classmethod
+def json_to_list(cls, coffee_json)
+```
 - For a given deserialized coffee object, `coffee_object`, the `json_to_list` class method should return the following values interpolated:
 ```python
 [
@@ -85,8 +88,11 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 
 ---
 
-4. Write a class method for `CoffeeDeserializer`, `self.read` that can read a JSON file from disk and that is functional cross-platform (i.e., on Windows, Linux, and MacOS)
-- `def self.read(filepath)`
+4. Write a class method for `CoffeeDeserializer`, `CoffeeDeserializer.read` that can read a JSON file from disk and that is functional cross-platform (i.e., on Windows, Linux, and MacOS)
+```
+@classmethod
+def read(cls, filepath)
+```
 - returns: a list of CoffeeDeserializer objects
 
 ---
