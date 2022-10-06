@@ -116,7 +116,7 @@ As an example, on [Qualcomm Venture's About page](https://www.qualcommventures.c
 document.querySelector("#h-supporting-entrepreneurship-diversity ~ p")
 ```
 
-# User Story / Acceptance Criteria:
+## User Story / Acceptance Criteria:
 
 ```
 GIVEN that I need to scrape the title and URL for a given book on books.toscrape.com
@@ -136,6 +136,8 @@ document.querySelector([YOUR CSS QUERY SELECTOR]).html
 document.querySelector([YOUR CSS QUERY SELECTOR]).title
 // 'The Third Wave: An Entrepreneur’s Vision of the Future'
 ```
+
+Provide the query you used.
 
 ---
 
