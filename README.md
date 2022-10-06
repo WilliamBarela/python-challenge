@@ -1,8 +1,19 @@
 # python-challenge
 
-Using Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee).
+Using Python 3.10 to write a collection service which consumes the [Coffee API](https://sampleapis.com/api-list/coffee)
+and transforms the response to a CSV file.
 
-## Specifications:
+## User Story / Acceptance Criteria
+
+```
+GIVEN as a user I need to consume the Coffee API
+WHEN I provide a valid endpoint of the Coffee API in the main function
+OR I provide a valid path to a stored JSON response from the Coffee API
+THEN the program should save a valid CSV file from the API response
+AND it should log any API traffic with status codes and errors if applicable.
+```
+
+## Suggested Implementation Details:
 1. Write a Python module which includes a `class ApiService` which includes at minimum the following method signature:
 
 - `def get(api_base_uri, endpoint)`
@@ -72,10 +83,13 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
 ]
 ```
 
+---
+
 4. Write a class method for `CoffeeDeserializer`, `self.read` that can read a JSON file from disk and that is functional cross-platform (i.e., on Windows, Linux, and MacOS)
 - `def self.read(filepath)`
 - returns: a list of CoffeeDeserializer objects
 
+---
 
 5. Requirements:
   - Read in `output/2022-10-05T23:14:06-05:00_-_iced.json` 
@@ -88,4 +102,6 @@ So that for each coffee JSON object, you can instantiate a coffee object with th
   id,title,description,ingredients,image
 ```
 
-Expect for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
+---
+
+IMPORTANT: expect for the `requests` library, only the **Python Standard Library** should be used to complete this challenge.
