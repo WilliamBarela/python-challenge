@@ -116,7 +116,7 @@ IMPORTANT: except for the `requests` library, only the **Python Standard Library
 
 In Javascript, one can use the `document.querySelector` and `document.querySelectorAll` methods to collect elements from the DOM which match on [CSS selectors](https://en.wikipedia.org/wiki/CSS#Selector).
 Such methods exist in the Python library [Beautiful Soup 4 (BS4)](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
-As an example, on [Qualcomm Venture's About page](https://www.qualcommventures.com/about/), if you are interested in the information in paragraph below the heading "Supporting Entrepreneurship & Diversity", we could use the following query selector in the Chrome Developer Tools console:
+As an example, on [Qualcomm Venture's About page](https://web.archive.org/web/20221206131751/https://www.qualcommventures.com/about/), if you are interested in the information in paragraph below the heading "Supporting Entrepreneurship & Diversity", we could use the following query selector in the Chrome Developer Tools console:
 
 ```javascript
 document.querySelector("#h-supporting-entrepreneurship-diversity ~ p").innerHTML
